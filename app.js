@@ -15,25 +15,18 @@ const myLodash = {
 	},
 	concat: (array, ...spred) => {
 		return array.concat(...spred)
+	},
+	difference: (array1, array2) => {
+		return array1.filter(i => {
+			return !array2.find(i2 => i === i2)
+		})
+	}
+
+
 }
-}
 
-const a = [0, 1, 2, 3, 4, '', false, 'oeua', 2, null, undefined]
-const a2 = [0, 1, 2, 3, 4, 2,]
-const b = ['test-0', 'test-1', 'test-2', 'test-3', 'test-4']
+// console.log([1, 2, 3].forEach(e => console.log(e)))
 
-console.log(myLodash.concat(a2, 4, 5, 7, [['o']], [2]));
-// console.log(myLodash.chunk(b, 2))
+console.log(myLodash.difference([1, 2, 3, 7, 3, 1, 9], [1, 2, 3, 4, 6]))
+console.log(_.difference([1, 2, 3, 7, 3, 1, 9], [1, 2, 3, 4, 6]))
 
-// console.log(myLodash.compact(a))
-
-
-
-// var array = [1];
-// var other = _.concat(array, 2, [3], [[4, '3']]);
-//
-// console.log(other);
-// // => [1, 2, 3, [4]]
-//
-// console.log(array);
-// // => [1]
